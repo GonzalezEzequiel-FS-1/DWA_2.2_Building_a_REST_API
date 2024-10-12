@@ -2,7 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 // Import the controller
-const { addGames, getOne } = require("../controller/gamesRoutes"); // Fix import to match the file name
+const { 
+  addGame,
+  getGame,
+  deleteGame,
+  deleteAllGames,
+  editGame } = require("../controller/gamesRoutes"); // Fix import to match the file name
 
 // Home route
 router.get("/", (req, res) => {
@@ -20,8 +25,11 @@ router.get("/", (req, res) => {
 });
 
 // Games route
-router.post("/games", addGames);
-router.get("/games/:id", getOne)
+router.post("/games", addGame);
+router.get("/games/:id", getGame)
+router.delete("/games/:id", deleteGame)
+router.delete("/games/deleteall", deleteAllGames)
+router.patch("/games/:id", editGame)
 
 
 module.exports = router;
