@@ -6,7 +6,7 @@ const gamesSchema = new mongoose.Schema({
     },
     genre: {
         type: String,
-        enum: ['Shooter', 'Fighting', 'Platformer', 'Puzzle', 'Racing', 'Maze', 'Action RPG', 'Strategy', 'Run-and-gun', 'Beat \'em up', 'Interactive Movie', 'Action'],
+        enum: ['Shooter', 'Fighting', 'Platformer', 'Puzzle', 'Racing', 'Maze', 'Action RPG', 'Strategy', 'Run-and-gun', 'Beat \'em up', 'Interactive Movie', 'Action', 'Sports', 'Rhythm', 'Action-adventure', 'Survival horror', 'First-person shooter', 'RPG'],
         required: true
     },
     release_year: {
@@ -42,14 +42,8 @@ const gamesSchema = new mongoose.Schema({
         type: Number,
         min: 0,
         max: 10,
-    },
-    created_at: {
-        type: Date,
-        required: true,
-        min: 1950,
-        max: new Date().getFullYear(),
-    },
+    }
     
 })
 
-module.exports = mongoose.model("games", gamesSchema)
+module.exports = mongoose.model("Game", gamesSchema)

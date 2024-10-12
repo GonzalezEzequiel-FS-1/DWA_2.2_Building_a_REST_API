@@ -1,0 +1,339 @@
+[
+    {
+      "title": "Pac-Man",
+      "genre": "Maze",
+      "release_year": 1980,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Donkey Kong",
+      "genre": "Platformer",
+      "release_year": 1981,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Space Invaders",
+      "genre": "Shooter",
+      "release_year": 1978,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Street Fighter II",
+      "genre": "Fighting",
+      "release_year": 1991,
+      "platform": "Arcade",
+      "rating": 10
+    },
+    {
+      "title": "Galaga",
+      "genre": "Shooter",
+      "release_year": 1981,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Mortal Kombat",
+      "genre": "Fighting",
+      "release_year": 1992,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Asteroids",
+      "genre": "Shooter",
+      "release_year": 1979,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Frogger",
+      "genre": "Action",
+      "release_year": 1981,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Q*bert",
+      "genre": "Puzzle",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Defender",
+      "genre": "Shooter",
+      "release_year": 1981,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Dragon's Lair",
+      "genre": "Interactive Movie",
+      "release_year": 1983,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Tempest",
+      "genre": "Shooter",
+      "release_year": 1981,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Double Dragon",
+      "genre": "Beat 'em up",
+      "release_year": 1987,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Joust",
+      "genre": "Action",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Ms. Pac-Man",
+      "genre": "Maze",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Gauntlet",
+      "genre": "Action RPG",
+      "release_year": 1985,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Paperboy",
+      "genre": "Action",
+      "release_year": 1985,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Centipede",
+      "genre": "Shooter",
+      "release_year": 1980,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "BurgerTime",
+      "genre": "Platformer",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "OutRun",
+      "genre": "Racing",
+      "release_year": 1986,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "After Burner II",
+      "genre": "Shooter",
+      "release_year": 1987,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Contra",
+      "genre": "Run-and-gun",
+      "release_year": 1987,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Punch-Out!!",
+      "genre": "Sports",
+      "release_year": 1984,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Dig Dug",
+      "genre": "Action",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Rampage",
+      "genre": "Action",
+      "release_year": 1986,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Pole Position",
+      "genre": "Racing",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Shinobi",
+      "genre": "Action",
+      "release_year": 1987,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Ghosts 'n Goblins",
+      "genre": "Platformer",
+      "release_year": 1985,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Robotron: 2084",
+      "genre": "Shooter",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Xevious",
+      "genre": "Shooter",
+      "release_year": 1983,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Zaxxon",
+      "genre": "Shooter",
+      "release_year": 1982,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Pitfall!",
+      "genre": "Platformer",
+      "release_year": 1982,
+      "platform": "Atari 2600",
+      "rating": 8
+    },
+    {
+      "title": "Metal Slug",
+      "genre": "Run-and-gun",
+      "release_year": 1996,
+      "platform": "Neo Geo",
+      "rating": 10
+    },
+    {
+      "title": "NBA Jam",
+      "genre": "Sports",
+      "release_year": 1993,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Golden Axe",
+      "genre": "Beat 'em up",
+      "release_year": 1989,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Spy Hunter",
+      "genre": "Racing",
+      "release_year": 1983,
+      "platform": "Arcade",
+      "rating": 7
+    },
+    {
+      "title": "Time Crisis",
+      "genre": "Shooter",
+      "release_year": 1995,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Tetris",
+      "genre": "Puzzle",
+      "release_year": 1984,
+      "platform": "Arcade",
+      "rating": 10
+    },
+    {
+      "title": "The Simpsons",
+      "genre": "Beat 'em up",
+      "release_year": 1991,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles",
+      "genre": "Beat 'em up",
+      "release_year": 1989,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Virtua Fighter",
+      "genre": "Fighting",
+      "release_year": 1993,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Sonic the Hedgehog",
+      "genre": "Platformer",
+      "release_year": 1991,
+      "platform": "Sega Genesis",
+      "rating": 10
+    },
+    {
+      "title": "Altered Beast",
+      "genre": "Beat 'em up",
+      "release_year": 1988,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Bubble Bobble",
+      "genre": "Platformer",
+      "release_year": 1986,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Cruis'n USA",
+      "genre": "Racing",
+      "release_year": 1994,
+      "platform": "Arcade",
+      "rating": 8
+    },
+    {
+      "title": "Marvel vs. Capcom 2",
+      "genre": "Fighting",
+      "release_year": 2000,
+      "platform": "Arcade",
+      "rating": 10
+    },
+    {
+      "title": "Dance Dance Revolution",
+      "genre": "Rhythm",
+      "release_year": 1998,
+      "platform": "Arcade",
+      "rating": 9
+    },
+    {
+      "title": "Sega Rally Championship",
+      "genre": "Racing",
+      "release_year": 1994,
+      "platform": "Arcade",
+      "rating": 8
+    }
+  ]
+  
