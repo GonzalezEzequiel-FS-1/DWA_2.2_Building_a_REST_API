@@ -1,14 +1,14 @@
 {
-  "name": "dwa-front-end",
+  "name": "vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "proxy": "http://localhost:3000",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite",          
+    "build": "vite build",   
+    "lint": "eslint .",     
+    "preview": "vite preview"  
   },
   "dependencies": {
     "axios": "^1.7.7",
