@@ -11,7 +11,7 @@ const {
   editGame, 
   getAllGames,
   addManyGames
-} = require("../controller/gamesRoutes");
+} = require("../controller/gamesRoutes.js");
 
 // Home route
 router.get("/", (req, res) => {
