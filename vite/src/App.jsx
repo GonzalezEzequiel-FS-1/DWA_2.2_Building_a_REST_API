@@ -7,16 +7,16 @@ import {
 
 function App() {
   // State hooks
-  const [games, setGames] = useState([]); // Initialize games as an empty array
+  const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-// Set environment variables
-  const API_BASE = process.env.NODE_ENV === "development"
-    ? `http://localhost:3000`
-    : process.env.REACT_APP_BASE_URL;
+  // Set environment variables
+  const API_BASE = import.meta.env.MODE === "development"
+    ? "http://localhost:3000/api/v1" // Local development API
+    : import.meta.env.VITE_REACT_APP_BASE_URL; // Heroku or production URL
 
-// Function to get the games
+  // Function to get the games
   const getGames = async () => {
     try {
       const response = await fetch(`${API_BASE}/games`);
@@ -33,7 +33,7 @@ function App() {
     }
   };
 
-// useEffect to fetch games on component mount
+  // useEffect to fetch games on component mount
   useEffect(() => {
     let ignore = false;
     if (!ignore) {
@@ -42,7 +42,7 @@ function App() {
     return () => {
       ignore = true;
     };
-  },[]);
+  }, []);
 
   return (
     <>

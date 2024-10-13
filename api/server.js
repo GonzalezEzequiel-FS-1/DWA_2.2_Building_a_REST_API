@@ -41,6 +41,14 @@ app.use(express.urlencoded({ extended: true }));
 const routes = require("./routes");
 app.use("/api/v1", routes);
 
+// Build Vite App
+app.use(express.static(path.join(__dirname, `../vite/dist`)))
+
+// Assume routes not in server are coming for the front end
+app.get("/*", (req, res)=>{
+    res.sendFile(path.join(__dirname,"../vite/dist"))
+})
+
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
