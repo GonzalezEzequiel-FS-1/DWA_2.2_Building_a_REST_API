@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getGameMiddleware } = require("../middlewares/middlewares");
+const { getGameMiddleware } = require("../middlewares/middlewares.js");
 
 // Import the controller
 const { 
