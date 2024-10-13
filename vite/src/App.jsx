@@ -53,7 +53,13 @@ function App() {
       ) : (
         <ul>
           {games.map((game, index) => (
-            <li key={index}>{game.title}</li>
+            <div key={index}>
+              <li>{game.title}</li>
+              <li>{game.genre}</li>
+              <li>{game.release_year}</li>
+              <li>{game.platform}</li>
+              <li>{game.rating}</li>
+            </div>
           ))}
         </ul>
       )}
