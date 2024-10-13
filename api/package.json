@@ -1,0 +1,32 @@
+{
+  "name": "2.2_create_a_rest_api",
+  "version": "1.0.0",
+  "description": "DWA 2.2 assignment",
+  "main": "index.js",
+  "scripts": {
+    "start":"node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API/issues"
+  },
+  "homepage": "https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API#readme",
+  "dependencies": {
+    "@mongodb-js/saslprep": "^1.1.9",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.1",
+    "nodemon": "^3.1.7",
+    "path": "^0.12.7"
+  }
+}

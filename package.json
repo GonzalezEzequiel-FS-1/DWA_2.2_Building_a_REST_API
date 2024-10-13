@@ -1,32 +1,20 @@
 {
-  "name": "2.2_create_a_rest_api",
+  "name": "apiwithclient",
   "version": "1.0.0",
-  "description": "DWA 2.2 assignment",
-  "main": "index.js",
+  "engines": {
+    "node": "18.20.4"
+  },
   "scripts": {
-    "start":"node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "install-vite": "npm install --prefix vite",
+    "install-api": "npm install --prefix api",
+    "build-vite": "npm run build --prefix vite",
+    "heroku-postbuild": "npm run install-vite && npm run install-api && npm run build-vite",
+    "start": "npm start --prefix api",
+    "dev": "concurrently --raw \"npm run api\" \"npm run vite\"",
+    "vite": "cd vite && npm run dev",
+    "api": "cd api && npm run dev"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API/issues"
-  },
-  "homepage": "https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API#readme",
   "dependencies": {
-    "@mongodb-js/saslprep": "^1.1.9",
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "mongodb": "^6.9.0",
-    "mongoose": "^8.7.1",
-    "nodemon": "^3.1.7",
-    "path": "^0.12.7"
+    "concurrently": "^9.0.1"
   }
 }
