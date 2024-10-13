@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Set Routes
 const routes = require("./routes");
-app.use("/", routes);
+app.use("/api/v1", routes);
 
 // Start Server
 app.listen(PORT, () => {
