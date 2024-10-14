@@ -5,17 +5,17 @@
     "node": "18.20.4"
   },
   "scripts": {
-    "install-vite": "vite",
-    "install-api": "nodemon server.js",
-    "build-vite": "npm run build",
-    "heroku-postbuild": "npm run build",
-    "start": "node server.js",
+    "install-vite": "npm install --prefix vite",
+    "install-api": "npm install --prefix api",
+    "build-vite": "npm run build --prefix vite",
+    "build-api": "npm run build --prefix api",
+    "heroku-postbuild": "npm run install-vite && npm run install-api && npm run build-vite",
+    "start": "npm start --prefix api",
     "dev": "concurrently --raw \"npm run api\" \"npm run vite\"",
     "vite": "cd vite && npm run dev",
-    "api": "cd api && npm run dev"
+    "api": "cd api && nodemon server.js"
   },
   "dependencies": {
-    "concurrently": "^9.0.1",
-    "express": "^4.17.1"
+    "concurrently": "^6.0.0"
   }
 }
