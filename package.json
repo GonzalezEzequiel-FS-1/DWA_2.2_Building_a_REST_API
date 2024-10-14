@@ -5,7 +5,7 @@
     "node": "18.20.4"
   },
   "scripts": {
-    "install-vite": "npm install --prefix vite",
+    "install-vite": "vite",
     "install-api": "npm install --prefix api",
     "build-vite": "npm run build --prefix vite",
     "heroku-postbuild": "npm run install-vite && npm run build-vite",
