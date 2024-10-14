@@ -19,7 +19,7 @@ function App() {
   // Function to get the games
   const getGames = async () => {
     try {
-      const response = await fetch(`${API_BASE}`);
+      const response = await fetch(`${API_BASE}/games`);
       if (!response.ok) throw new Error("Network response was not ok");
       const result = await response.json();
       const games = result.data;
