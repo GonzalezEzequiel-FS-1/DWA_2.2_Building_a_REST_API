@@ -14,7 +14,7 @@ function App() {
   // Function to fetch games
   const getGames = async () => {
     try {
-      const response = await axios.get(`${API_BASE}/games`);
+      const response = await axios.get(`http://localhost:3000/api/v1/games`);
       const data = response.data;
       console.log(data); // Log the data to inspect it
       if (Array.isArray(data)) {
@@ -47,8 +47,8 @@ function App() {
       ) : (
         <ul>
           {/* Display games if they exist */}
-          {games.map((game) => (
-            <li key={game._id}>
+          {games.map((game, index) => (
+            <li key={index}>
               <h2>{game.title}</h2>
               <p>Genre: {game.genre}</p>
               <p>Release Year: {game.release_year}</p>
