@@ -1,3 +1,4 @@
+#DotEnv file has been added to gitIgnore
 .env
 
 # Logs
