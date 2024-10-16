@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 // Games routes
 
 // Add Single Game
-router.post("/games", addGame); // This handles adding a single game
+router.post("/games", addGame);
 
 // Add Multiple Games (Bulk Upload)
 router.post("/games/bulk", addManyGames);
