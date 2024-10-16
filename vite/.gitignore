@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #DotEnv file has been added to gitIgnore
+=======
+# DotEnv is listed here but keeps uploading to GH...
+>>>>>>> 881c8a22d49fd13c46156048f14ca573c0fe1af5
 .env
 
 # Logs
