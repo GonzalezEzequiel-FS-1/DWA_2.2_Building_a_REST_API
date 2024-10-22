@@ -36,16 +36,16 @@ const BaseButton = styled.button`
 
 // Create the red Delete button
 export const DeleteBtn = styled(BaseButton)`
-  background-color: red;
+  background-color:#b5b6e4;
 
   &:hover {
-    background-color: darkred;
+    background-color: #a61c17;
   }
 `;
 
 // Create the blue Edit button
 export const EditBtn = styled(BaseButton)`
-  background-color: blue;
+  background-color: #4f43ae;
 
   &:hover {
     background-color: darkblue;

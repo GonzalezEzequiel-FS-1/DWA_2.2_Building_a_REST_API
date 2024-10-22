@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 const path = require("path");
 const dotEnv = require("dotenv");
 const cors = require("cors");
-
+const authRoutes = require('./routes/auth')
+const userRoutes = require('./controller/userRoutes')
 // Start Express
 const app = express();
 
@@ -41,8 +42,12 @@ app.use(express.urlencoded({ extended: true }));
 const routes = require("./routes");
 app.use("/api/v1", routes);
 
+//Set Auth Routes
+app.use("/auth", authRoutes)
 // Build Vite App
 app.use(express.static(path.join(__dirname, `../vite/dist`)))
+//Set User Routes
+app.use("/users", userRoutes)
 
 // Assume routes not in server are coming for the front end
 app.get("/*", (req, res)=>{
