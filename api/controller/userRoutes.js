@@ -26,8 +26,8 @@ const getUser = async (req, res, next) => {
         });
     }
     
-    req.user = user; // Attach the user to the request object
-    next(); // Proceed to the next middleware or route handler
+    req.user = user;
+    next();
 };
 
 // Route to get all users (protected)
@@ -36,7 +36,7 @@ router.get("/", protectedRoute, async (req, res) => {
         const users = await User.find();
         res.status(200).json({
             success: true,
-            data: users // Return the list of users
+            data: users
         });
     } catch (error) {
         return res.status(500).json({
@@ -46,11 +46,11 @@ router.get("/", protectedRoute, async (req, res) => {
     }
 });
 
-// Example route to get a specific user by ID
+// Get a specific user by ID
 router.get("/:id", protectedRoute, getUser, (req, res) => {
     res.status(200).json({
         success: true,
-        data: req.user // Return the found user
+        data: req.user
     });
 });
 

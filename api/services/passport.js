@@ -8,16 +8,20 @@ const passport = require("passport");
 
 const jwtOptions = {
     secretOrKey:config.secret,
-    jwtFromRequest: ExtractJwt.fromHeader("Authorization")
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
 }
-Jwtstrategy = new JwtStrategy(jwtOptions, function(payload, done){
-    User.findById(payload.sub, function(error, user){
-        if(error){
-            return done(error, false)
+const jwt = new JwtStrategy(jwtOptions, async (payload, done) => {
+    try {
+        // Use await to fetch the user by ID
+        const user = await User.findById(payload.sub);
+        if (user) {
+            return done(null, user); // User found
+        } else {
+            return done(null, false); // No user found
         }
-        if(user){
-            done(null, false)
-        }
-    })
-})
-passport.use(JwtStrategy)
+    } catch (error) {
+        return done(error, false); // Error in database query
+    }
+});
+
+passport.use(jwt)
