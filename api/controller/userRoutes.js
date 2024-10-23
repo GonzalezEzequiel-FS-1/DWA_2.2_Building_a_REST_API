@@ -1,6 +1,6 @@
 const express = require("express");
 const passport = require('passport');
-const passportService = require('../services/passport');
+//const passportService = require('../services/passport');
 const User = require('../models/user');
 
 const protectedRoute = passport.authenticate('jwt', {
@@ -48,6 +48,7 @@ router.get("/", protectedRoute, async (req, res) => {
 
 // Get a specific user by ID
 router.get("/:id", protectedRoute, getUser, (req, res) => {
+    
     res.status(200).json({
         success: true,
         data: req.user
