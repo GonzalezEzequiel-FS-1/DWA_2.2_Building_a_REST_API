@@ -5,12 +5,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Edit from "./pages/Edit";
 import FourOhFour from "./pages/FourOhFour";
 import NewGame from "./pages/NewGame";
+import SignUp from "./pages/SignUp";
 function App() {
   return (
     <Container>
       <Router>
         <Routes>
           <Route path="*" element={<FourOhFour />} />
+          <Route path="/signup" element={<SignUp/>} />
           <Route path="/" element={<Home />} />
           <Route path="/edit/:paramID" element={<Edit />} />
           <Route path="/new" element={<NewGame />} />
