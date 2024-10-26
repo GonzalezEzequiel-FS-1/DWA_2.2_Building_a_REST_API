@@ -1,10 +1,8 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { DeleteBtn, EditBtn } from "../components/Buttons/Btn";
-import { validateSignUp } from "../utils/validateSignup";
-import { createUser } from "../utils/createUser";
+import { signIn } from "../utils/signIn";
 
 const SignIn = () => {
     const [user, setUser] = useState('');
@@ -14,15 +12,23 @@ const SignIn = () => {
     const [error, setError] = useState('');
 
 
+
     const toggleShowPass = (e) => {
         e.preventDefault();
         setShowPass((prevState) => !prevState);
     };
-    const handleSignIn = async ()=>{
+    const handleSignIn = async (e)=>{
+        e.preventDefault();
         try{
-            console.log("Testing")
+            const response = await signIn(user, password);
+            if(response){
+                console.log(response.message)
+                navigate('/home')
+            }
+            
         }catch(error){
-            console.log(error)
+            
+            setError(error.message)
         }
     }
     
