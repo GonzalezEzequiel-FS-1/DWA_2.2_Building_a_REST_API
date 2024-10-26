@@ -6,6 +6,7 @@ import Edit from "./pages/Edit";
 import FourOhFour from "./pages/FourOhFour";
 import NewGame from "./pages/NewGame";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 function App() {
   return (
     <Container>
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="*" element={<FourOhFour />} />
           <Route path="/signup" element={<SignUp/>} />
-          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/edit/:paramID" element={<Edit />} />
           <Route path="/new" element={<NewGame />} />
         </Routes>
