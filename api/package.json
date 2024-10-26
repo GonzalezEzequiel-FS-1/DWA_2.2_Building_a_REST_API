@@ -20,6 +20,7 @@
   "homepage": "https://github.com/GonzalezEzequiel-FS-1/DWA_2.2_Building_a_REST_API#readme",
   "dependencies": {
     "@mongodb-js/saslprep": "^1.1.9",
+    "bcrypt": "^5.1.1",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",

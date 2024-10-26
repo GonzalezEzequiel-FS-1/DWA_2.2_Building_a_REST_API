@@ -16,6 +16,7 @@
     "api": "cd api && npm start"
   },
   "dependencies": {
-    "concurrently": "^6.0.0"
+    "concurrently": "^6.0.0",
+    "passport-local": "^1.0.0"
   }
 }

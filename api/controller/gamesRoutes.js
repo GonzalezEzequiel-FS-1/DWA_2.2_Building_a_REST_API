@@ -78,20 +78,20 @@ const addManyGames = async (req, res) => {
 };
 
 //Get ALL Games WORKING
-const getAllGames = async (req, res)=>{
-    const students = await Game.find();
+const getAllGames = async (req, res) => {
     try {
+        const games = await Game.find();
         return res.status(200).json({
-            success:true,
-            data:students
-        })
+            success: true,
+            data: games
+        });
     } catch (error) {
         return res.status(500).json({
-            success:false,
-            message:`${req.method} failed. consult error >>> ${error.message}`
-        })
+            success: false,
+            message: `Error fetching games: ${error.message}`
+        });
     }
-}
+};
 
 // Get One Game WORKING
 const getGame = async (req, res) => {

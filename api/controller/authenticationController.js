@@ -10,7 +10,7 @@ const tokenForUser = user => {
     }, config.secret);
 };
 
-const signIn = async (req, res, next)=>{
+const signin = async (req, res, next)=>{
     const user = req.user;
     res.send({ token: tokenForUser(user), user_id: user._id })
 
@@ -63,5 +63,5 @@ const signup = async (req, res, next) => {
 
 module.exports = {
     signup,
-    signIn
+    signin
 };

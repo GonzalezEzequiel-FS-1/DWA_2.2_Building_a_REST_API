@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { getGameMiddleware } = require("../middlewares/middlewares.js");
+const authController = require('../controller/authenticationController');
 
 // Import the controller
 const { 
@@ -29,8 +30,7 @@ router.get("/", (req, res) => {
   }
 });
 
-// Games routes
-
+// VVVVVVVVVV GAMES ROUTES VVVVVVVVVV
 // Add Single Game
 router.post("/games", addGame);
 
@@ -48,8 +48,20 @@ router.delete("/games/:id", getGameMiddleware, deleteGame);
 
 // Delete All Games
 router.delete("/games", deleteAllGames);
-////slslsls
+
 // Edit Game by ID
 router.patch("/games/:id", getGameMiddleware, editGame);
+
+
+// VVVVVVVVVV AUTH ROUTES VVVVVVVVVV
+
+router.post("/auth/signup", authController.signup)
+
+
+// VVVVVVVVVV USER ROUTES VVVVVVVVVV
+
+
+
+
 
 module.exports = router;

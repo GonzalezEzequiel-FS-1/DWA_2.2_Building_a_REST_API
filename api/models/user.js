@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
-const validateEmail = require("../utils/validateEmail")
-const bcrypt = require("bcrypt-nodejs")
+const validateEmail = require("../utils/validateEmail");
+const bcrypt = require("bcrypt");
+
 const userSchema = new mongoose.Schema({
     newUser: {
         type: String,
-        required:true
+        required: true
     },
     email: {
         type: String,
         required: "Email Address is required",
         lowercase: true,
+        unique: true, // Ensure emails are unique
         validate: [validateEmail, "Email Invalid"]
-
     },
     password: {
         type: String,
@@ -21,32 +22,33 @@ const userSchema = new mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now
-
     }
-
 });
 
-userSchema.pre('save', function(next) {
+// Hashing and Salting Password
+userSchema.pre('save', async function (next) {
     const user = this;
     if (user.isNew || user.isModified("password")) {
-        //Run Hashing and Salting
-        bcrypt.genSalt(10, (error, salt) => {
-            if (error) {
-                return next(error)
-            }
-            bcrypt.hash(user.password, salt, null, (error, hash) => {
-                if (error) {
-                    return next(error)
-                }
-                user.password = hash;
-                next();
-            })
-        })
-
+        try {
+            const salt = await bcrypt.genSalt(10);
+            user.password = await bcrypt.hash(user.password, salt);
+            next();
+        } catch (error) {
+            next(error);
+        }
     } else {
-        //Skip Hashing and Salting
-        next()
+        next();
     }
-})
+});
+
+// Method to compare passwords
+userSchema.methods.comparePassword = function (candidatePassword, callback) {
+    bcrypt.compare(candidatePassword, this.password, (error, isMatch) => {
+        if (error) {
+            return callback(error);
+        }
+        callback(null, isMatch);
+    });
+};
 
 module.exports = mongoose.model('User', userSchema);
