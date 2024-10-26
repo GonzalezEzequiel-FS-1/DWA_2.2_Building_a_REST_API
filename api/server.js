@@ -6,6 +6,11 @@ const dotEnv = require("dotenv");
 const cors = require("cors");
 const authRoutes = require('./routes/auth')
 const userRoutes = require('./controller/userRoutes')
+
+//Setup Passport:
+const passport = require("passport");
+require("./services/passport");
+
 // Start Express
 const app = express();
 

@@ -29,9 +29,9 @@ const localOptions = {
 };
 
 // Implementing Local Strategy
-const localStrategy = new LocalStrategy(localOptions, (email, password, done) => {
-    User.findOne({ email }, (error, user) => {
-        if (error) return done(error);
+const localStrategy = new LocalStrategy(localOptions, async (newUser, password, done) => {
+    try {
+        const user = await User.findOne({ newUser });
         if (!user) return done(null, false); // User Not Found
 
         // Compare passwords
@@ -40,7 +40,9 @@ const localStrategy = new LocalStrategy(localOptions, (email, password, done) =>
             if (!isMatch) return done(null, false); // Password does not match
             return done(null, user); // Authentication successful
         });
-    });
+    } catch (error) {
+        return done(error);
+    }
 });
 
 // Use the strategies in Passport

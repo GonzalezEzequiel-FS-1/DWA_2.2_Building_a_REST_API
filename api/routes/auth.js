@@ -2,6 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const { signup, signin } = require("../controller/authenticationController");
 
+
 const requireLogin = passport.authenticate("local", { session: false }); // Use 'local'
 
 const router = express.Router();

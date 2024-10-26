@@ -7,7 +7,12 @@ const protectedRoute = passport.authenticate('jwt', {
     session: false,
 });
 const router = express.Router();
-
+router.get("/test", (req, res)=>{
+    res.status(200).json({
+        success:true,
+        message:"Users Route responding"
+    })
+})
 // Middleware to get user by ID
 const getUser = async (req, res, next) => {
     let user;

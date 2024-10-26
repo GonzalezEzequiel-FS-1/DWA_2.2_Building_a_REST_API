@@ -55,7 +55,7 @@ router.patch("/games/:id", getGameMiddleware, editGame);
 
 // VVVVVVVVVV AUTH ROUTES VVVVVVVVVV
 
-router.post("/auth/signup", authController.signup)
+//router.post("/auth/signup", authController.signup)
 
 
 // VVVVVVVVVV USER ROUTES VVVVVVVVVV
