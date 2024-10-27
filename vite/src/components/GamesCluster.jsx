@@ -4,11 +4,12 @@ import axios from "axios";
 import { DeleteBtn, EditBtn } from "./Buttons/Btn";
 import { useNavigate, useParams } from "react-router-dom";
 import { API_BASE } from "../utils/utils";
-import { Title, Text, Item, ItemTitle, UnorganizedList} from "../utils/styled";
+import { Text, Item, ItemTitle, UnorganizedList} from "../utils/styled";
+import { logout } from "../utils/logout";
 
 function GamesCluster() {
-  let { id, setID } = useState();
-  const navigate = useNavigate(); // Navigation after deletion or edit
+  //let { id, setID } = useState();
+  const navigate = useNavigate();
   const [games, setGames] = useState([]);
   const [filteredGames, setFilteredGames] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,16 @@ function GamesCluster() {
   const [searchTerm, setSearchTerm] = useState("");
   let paramID = useParams();
 
-
+  const handleSignOut = (e)=>{
+    e.preventDefault();
+    const signOffStatus = logout();
+    if(signOffStatus.valid === true){
+      console.log(signOffStatus.message)
+      navigate("/signin")
+    }else{
+      setError(signOffStatus.message)
+    }
+  }
   const getGames = async () => {
     try {
       const response = await axios.get(`${API_BASE}/games`);
@@ -146,6 +156,7 @@ function GamesCluster() {
         </UnorganizedList>
       )}
       <EditBtn onClick={navigateToCreateNew}>ADD GAME</EditBtn>
+      <DeleteBtn onClick={handleSignOut}>SIGN OUT</DeleteBtn>
     </Container>
   );
 }

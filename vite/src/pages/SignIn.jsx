@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { DeleteBtn, EditBtn } from "../components/Buttons/Btn";
 import { signIn } from "../utils/signIn";
+import { BtnCnt } from "../utils/styled";
 
 const SignIn = () => {
     const [user, setUser] = useState('');
@@ -10,7 +11,10 @@ const SignIn = () => {
     const navigate = useNavigate();
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState('');
-
+    const handleNavigateToSignUp =(e)=>{
+        e.preventDefault()
+        navigate("/signup")
+    }
 
 
     const toggleShowPass = (e) => {
@@ -21,9 +25,11 @@ const SignIn = () => {
         e.preventDefault();
         try{
             const response = await signIn(user, password);
-            if(response){
+            if(response.valid === true){
                 console.log(response.message)
                 navigate('/home')
+            }if(response.valid === false){
+                setError(response.message)
             }
             
         }catch(error){
@@ -57,8 +63,11 @@ const SignIn = () => {
                     />
                 </InputContainer>
                 {error && <ErrorLabel>{error}</ErrorLabel>}
-                <DeleteBtn onClick={toggleShowPass}>{showPass ? "Hide Password" : "Show Password"}</DeleteBtn>
-                <EditBtn type="submit">SIGN UP</EditBtn>
+                <ShowPassBTN onClick={toggleShowPass}>{showPass ? "Hide Password" : "Show Password"}</ShowPassBTN>
+                <BtnCnt>
+                <EditBtn type="submit">SIGN IN</EditBtn>
+                <DeleteBtn onClick={handleNavigateToSignUp}>SIGN UP</DeleteBtn>
+                </BtnCnt>
             </FormContainer>
         </Container>
     );
@@ -107,4 +116,9 @@ const Label = styled.label`
 const ErrorLabel = styled.label`
     color: red;
     font-weight: bold;
+    text-align: center;
 `;
+const ShowPassBTN = styled(DeleteBtn)`
+    width:fit-content;
+    font-size: .5rem;
+`

@@ -6,11 +6,12 @@ export const createUser = async (newUser, email, password) => {
             email,
             password
         })
-        if(response){
+        if(response.data.token){
             const userID = response.data.user_id
             const token = response.data.token
             localStorage.setItem("GameVault Token", token)
             localStorage.setItem("GameVault User ID", userID)
+
         }
         return {
             valid: true,
