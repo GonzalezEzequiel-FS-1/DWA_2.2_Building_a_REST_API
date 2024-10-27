@@ -1,8 +1,7 @@
 import "./App.css";
 import styled from "styled-components";
 import Home from "./pages/Home"
-import { useState, useEffect } from "react"
-import { Outlet, useLocation, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Edit from "./pages/Edit";
 import FourOhFour from "./pages/FourOhFour";
 import NewGame from "./pages/NewGame";
@@ -23,7 +22,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/edit/:paramID" element={<Edit />} />
             <Route path="/new" element={<NewGame />} />
           </Route>

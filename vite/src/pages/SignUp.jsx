@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { DeleteBtn, EditBtn } from "../components/Buttons/Btn";
-import { validateSignUp } from "../utils/validateSignup";
 import AuthService from "../services/auth.service";
 
 const SignUp = () => {
@@ -36,7 +35,7 @@ const SignUp = () => {
         // Attempt to create user
         const createdUser = await AuthService.createUser(user, email, password)
         if (createdUser.valid) {
-            navigate('/home')
+            navigate('/')
             console.log(createdUser.message)
         } else (setError(createdUser.message))
 

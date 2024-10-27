@@ -28,7 +28,7 @@ const SignIn = () => {
             const response = await AuthService.signIn(user, password);
             if(response.valid === true){
                 console.log(response.message)
-                navigate('/home')
+                navigate('/')
             }if(response.valid === false){
                 setError(response.message)
             }

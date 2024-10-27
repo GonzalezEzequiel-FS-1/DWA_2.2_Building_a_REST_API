@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import axios from "axios";
-import React, { useState, useEffect, useRef } from "react";
+import  { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Item, ItemContainer, ItemTitle, Title, Options, TextInput, DropDown, BtnCnt, Container, GameContainer, Text } from "../utils/styled";
+import { ItemContainer, ItemTitle, Title, Options, TextInput, DropDown, BtnCnt, Container, GameContainer, Text } from "../utils/styled";
 import { DeleteBtn, EditBtn } from "../components/Buttons/Btn";
 import { API_BASE } from "../utils/utils"
 
@@ -10,11 +10,7 @@ import { API_BASE } from "../utils/utils"
 export default function NewGame() {
     const formRef = useRef(null)
     const navigate = useNavigate();
-    const [title, settitle] = useState('');
-    const [genre, setGenre] = useState('');
-    const [platform, setPlatform] = useState('');
-    const [release_year, setRelease_year] = useState('');
-    const [rating, setRating] = useState('');
+
     const [error, setError] = useState(null);
     const [formData, setFormData] = useState({
         title: "",
