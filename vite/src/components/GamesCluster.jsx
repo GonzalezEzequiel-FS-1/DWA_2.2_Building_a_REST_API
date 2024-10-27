@@ -5,7 +5,7 @@ import { DeleteBtn, EditBtn } from "./Buttons/Btn";
 import { useNavigate, useParams } from "react-router-dom";
 import { API_BASE } from "../utils/utils";
 import { Text, Item, ItemTitle, UnorganizedList} from "../utils/styled";
-import { logout } from "../utils/logout";
+import AuthService from "../services/auth.service";
 
 function GamesCluster() {
   //let { id, setID } = useState();
@@ -20,7 +20,7 @@ function GamesCluster() {
 
   const handleSignOut = (e)=>{
     e.preventDefault();
-    const signOffStatus = logout();
+    const signOffStatus = AuthService.logout();
     if(signOffStatus.valid === true){
       console.log(signOffStatus.message)
       navigate("/signin")

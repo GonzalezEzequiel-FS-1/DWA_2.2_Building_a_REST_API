@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { DeleteBtn, EditBtn } from "../components/Buttons/Btn";
 import { validateSignUp } from "../utils/validateSignup";
-import { createUser } from "../utils/createUser";
+import AuthService from "../services/auth.service";
 
 const SignUp = () => {
     const [user, setUser] = useState('');
@@ -28,13 +28,13 @@ const SignUp = () => {
         e.preventDefault();
         try{
         // Validate Sign Up form
-        const { valid, message } = await validateSignUp(user, email, password, confirmPassword);
+        const { valid, message } = await AuthService.validateSignUp(user, email, password, confirmPassword);
         if (!valid) {
             setError(message);
             return;
         }
         // Attempt to create user
-        const createdUser = await createUser(user, email, password)
+        const createdUser = await AuthService.createUser(user, email, password)
         if (createdUser.valid) {
             navigate('/home')
             console.log(createdUser.message)

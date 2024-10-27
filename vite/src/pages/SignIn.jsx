@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { DeleteBtn, EditBtn } from "../components/Buttons/Btn";
-import { signIn } from "../utils/signIn";
+
 import { BtnCnt } from "../utils/styled";
+import AuthService from "../services/auth.service";
 
 const SignIn = () => {
     const [user, setUser] = useState('');
@@ -24,7 +25,7 @@ const SignIn = () => {
     const handleSignIn = async (e)=>{
         e.preventDefault();
         try{
-            const response = await signIn(user, password);
+            const response = await AuthService.signIn(user, password);
             if(response.valid === true){
                 console.log(response.message)
                 navigate('/home')

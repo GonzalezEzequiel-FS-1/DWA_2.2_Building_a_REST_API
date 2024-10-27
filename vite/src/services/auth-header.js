@@ -7,9 +7,6 @@ export const authHeader = async () =>{
             "Authorization":`Bearer ${userData.Token}`
         }
     }else{
-        return{
-            valid:false,
-            message:`User Not logged in, unexpected error occurred`
-        }
+        null
     }
 }
